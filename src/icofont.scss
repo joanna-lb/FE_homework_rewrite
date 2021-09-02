@@ -1,0 +1,112 @@
+@font-face {
+
+  font-family: "IcoFont";
+  font-weight: normal;
+  font-style: "Regular";
+  src: url("./icofont.woff2") format("woff2"),
+  url("./icofont.woff") format("woff");
+}
+[class^="icofont-"], [class*=" icofont-"] {
+  font-family: 'IcoFont' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
+.icofont-search-1:before {
+  content: "\ed11";
+  font-size:20px;
+}
+
+.icofont-navigation-menu:before {
+  content: "\efa2";
+}
+
+.icofont-listing-box:before {
+  content: "\ef75";
+}
+
+.icofont-gear-alt:before {
+  content: "\ef39";
+  size: 144px;
+  opacity: 20%;
+}
+
+.icofont-coffee-cup:before {
+  content: "\eb56";
+  size: 144px;
+  opacity: 20%;
+}
+
+.icofont-computer:before {
+  content: "\eeee";
+}
+
+.icofont-info-circle:before {
+  content: "\ef4e";
+}
+
+.icofont-folder:before {
+  content: "\ef36";
+}
+
+.icofont-plus:before {
+  content: "\efc2";
+  font-size:16px
+}
+
+.icofont-trash:before {
+  content: "\ee09";
+  font-size: 16px;
+
+}
+
+.icofont-ban:before {
+  content: "\eead";
+}
+
+.icofont-close:before {
+  content: "\ec4f";
+}
+.icofont-id:before {
+  content: "\ef4a";
+}
+
+.icofont-sign-out:before {
+  content: "\efe9";
+}
+
+.icofont-site-map:before
+{
+  content: "\efeb";
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.icofont-ship:before
+{
+  content: "\ee34";
+  font-size: 20px;
+  margin-right: 10px;
+}
+.icofont-life-buoy:before
+{
+  content: "\ef68";
+  font-size: 20px;
+  margin-right: 10px;
+}
+.icofont-dashboard:before
+{
+  content: "\eefa";
+  font-size: 20px;
+  margin-right: 10px;
+}

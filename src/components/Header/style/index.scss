@@ -1,0 +1,116 @@
+@import "src/icofont";
+
+
+.header-bar {
+  height: 40px;
+  width: 100%;
+  padding: 20px 0;
+  background-color: #FFF;
+  box-shadow: rgba(0, 0, 0, .2) 0 2px 4px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+
+  .mid {
+    width: 1200px;
+    margin: auto;
+  }
+
+  .logo {
+    width: 120px;
+    height: 40px;
+    margin: auto;
+    display: flex;
+    align-content: space-between;
+    position: relative;
+
+    img {
+      width: 120px;
+      height: 40px;
+    }
+
+
+    .portrait {
+      height: 40px;
+      display: flex;
+
+      img {
+        border-radius: 50%;
+        height: 40px;
+        width: auto;
+        margin-right: 0;
+        margin-left: 401px;
+
+
+      }
+
+
+    }
+
+    .portrait-button {
+      border: none;
+      background: none;
+      transform: rotate(90deg);
+      font-size: larger;
+      color: grey;
+      visibility: hidden;
+    }
+
+    .portrait:hover .portrait-button {
+      visibility: visible;
+    }
+  }
+
+  @media (max-width: 862px) {
+    .mid {
+      width: 700px;
+    }
+    .logo {
+      width: 149px;
+
+      .portrait {
+        img {
+          margin-left: 320px;
+        }
+
+      }
+
+      .portrait-sign-in {
+        right: -350px;
+      }
+    }
+
+
+  }
+  @media (max-width: 370px) {
+    .mid {
+      width: 360px;
+    }
+    .logo {
+      width: 4px;
+      margin-left: 0;
+    }
+
+  }
+}
+
+
+.portrait-sign-in {
+  list-style: none;
+  top: 39px;
+  right: -480px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  height: 43px;
+  padding: 8px;
+  position: absolute;
+  background-color: white;
+  > li:hover {
+    background-color: #EFEFEF;
+  }
+
+}
+
+.portrait-sign-in-not-show {
+  display: none;
+}

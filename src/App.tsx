@@ -4,21 +4,17 @@ import './index.scss'
 
 import {useEffect, useState} from "react";
 import {NewAgentType} from "./type";
+import Header from "./components/Header/Header";
 
 
-
- function App() {
-
+function App() {
 
 
-
-
-
-    return (
-        <div>
-
-        </div>
-    );
+  return (
+    <div>
+    <Header/>
+    </div>
+  );
 
 }
 

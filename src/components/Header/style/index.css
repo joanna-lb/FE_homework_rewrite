@@ -1,0 +1,105 @@
+@font-face {
+  font-family: "IcoFont";
+  font-weight: normal;
+  font-style: "Regular";
+  src: url("src/components/Header/style/icofont.woff2Header/style/icofont.woff2") format("woff2"), url("src/components/Header/style/icofont.woff/Header/style/icofont.woff") format("woff");
+}
+[class^=icofont-], [class*=" icofont-"] {
+  font-family: "IcoFont" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
+.icofont-id:before {
+  content: "\ef4a";
+}
+
+.header-bar {
+  height: 40px;
+  width: 100%;
+  padding: 20px 0;
+  background-color: #FFF;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 4px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.header-bar .mid {
+  width: 1200px;
+  margin: auto;
+}
+.header-bar .logo {
+  width: 120px;
+  height: 40px;
+  margin: auto;
+  display: flex;
+  align-content: space-between;
+  position: relative;
+}
+.header-bar .logo img {
+  width: 120px;
+  height: 40px;
+}
+.header-bar .logo .portrait {
+  height: 40px;
+}
+.header-bar .logo .portrait img {
+  border-radius: 50%;
+  height: 40px;
+  width: auto;
+  margin-right: 0;
+  margin-left: 401px;
+}
+@media (max-width: 862px) {
+  .header-bar .mid {
+    width: 700px;
+  }
+  .header-bar .logo {
+    width: 700px;
+  }
+  .header-bar .logo .portrait img {
+    margin-left: 320px;
+  }
+}
+@media (max-width: 370px) {
+  .header-bar .mid {
+    width: 360px;
+  }
+  .header-bar .logo {
+    width: 4px;
+    margin-left: 0;
+  }
+}
+
+.portrait-button {
+  border: none;
+  background: none;
+  transform: rotate(90deg);
+  font-size: larger;
+  color: grey;
+}
+
+.portrait-sign-in {
+  list-style: none;
+  top: 26px;
+  right: -480px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  height: 43px;
+  padding: 8px;
+}
+.portrait-sign-in > li:hover {
+  background-color: #EFEFEF;
+}
+
+/*# sourceMappingURL=index.css.map */
