@@ -1,0 +1,96 @@
+@import "src/icofont";
+@import "src/color";
+
+
+.left-bar {
+  position: fixed;
+  top: 80px;
+  bottom: 40px;
+  width: 250px;
+  background-color: $left-bar-background-color;
+  display: flex;
+  flex-direction: column;
+  margin-left: 3%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  .left-bar-menu {
+    align-self: flex-start;
+    list-style: none;
+    height: 40%;
+    width: 235px;
+    margin-left: 15px;
+    padding-left: 0;
+    margin-bottom: auto;
+
+    > li {
+      &:hover {
+        background-color: $left-bar-background-color-hover;
+        color: $hover-color
+      }
+
+      > a {
+        line-height: 45px;
+        height: 45px;
+        color: #ccc;
+        background: none;
+        border: none;
+        text-decoration: none;
+
+        &:hover {
+          background-color: $left-bar-background-color-hover;
+          color: $hover-color
+        }
+      }
+    }
+  }
+
+
+  .history {
+    font-size: 12px;
+    color: #999;
+    padding-left: 0;
+    margin-left: 15px;
+
+    .history-title {
+      color: #ccc;
+      font-size: 24px;
+    }
+
+    ul {
+      padding-left: 10px;
+
+      > li:hover {
+        background-color: $left-bar-background-color-hover;
+      }
+    }
+
+  }
+
+  &.active {
+    background-color: #435466;
+    color: #00B4CF;
+  }
+}
+
+@media (max-width: 1140px) {
+  .left-bar {
+    width: 127px !important;
+
+    .left-bar-menu {
+      width: auto;
+    }
+  }
+  .history {
+    ul {
+      font-size: 7px;
+    }
+  }
+
+}
+
+@media (max-width: 370px) {
+  .left-bar {
+    display: none;
+  }
+}
