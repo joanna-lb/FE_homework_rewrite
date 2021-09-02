@@ -5,6 +5,7 @@ import './index.scss'
 import {useEffect, useState} from "react";
 import {NewAgentType} from "./type";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
 
   return (
     <div>
-    <Header/>
+      <Header/>
+      <Footer/>
     </div>
   );
 
