@@ -1,0 +1,43 @@
+*{
+  box-sizing:content-box;
+  -moz-box-sizing:inherit;
+}
+
+html {
+  background: #f3f3f3;
+  color: #333;
+}
+
+html, body {
+
+  height: 100%;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 14px Avenir, Helvetica, Arial, sans-serif;
+  background: #f5f5f5;
+  color: #2D4054;
+  margin: 0 auto;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #ccc;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #ccc;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #ccc;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #ccc;
+}
+
