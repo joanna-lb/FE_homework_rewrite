@@ -351,7 +351,6 @@
 
     .tag-footer {
       margin-top: 40px;
-
       button {
         height: 30px;
         background: #00b4af;
@@ -369,6 +368,7 @@
         &.deny {
           font-size: 14px;
           float: right;
+          width: 75px;
         }
 
         .icon-plus {
@@ -379,11 +379,11 @@
       .tag {
         float: left;
         height: 30px;
-        line-height: 25px;
+        line-height: 30px;
         background-color: #f3f3f3;
         margin-left: 10px;
         padding: 0 10px;
-
+        margin-bottom: 10px;
         i {
           font-size: 18px;
           display: inline-block;
@@ -422,6 +422,7 @@
       .tag-footer {
         .tag {
           padding: 0 8px;
+
         }
       }
     }

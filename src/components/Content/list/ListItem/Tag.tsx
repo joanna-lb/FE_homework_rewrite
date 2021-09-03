@@ -33,11 +33,13 @@ const Tag = ({ handleChangePopover, resources, id,status,deleteResource}: TagPro
                           </span>
                 )}
                 {status==='building' &&
+
                 <button type="button" className="deny">
                     {<i className="icofont-ban"></i>}
                     &nbsp;
                     Deny
-                </button>}
+                </button>
+                    }
             </div>
         </>
     )

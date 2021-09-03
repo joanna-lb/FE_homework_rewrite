@@ -49,13 +49,14 @@ function App({newAgents,setNewAgents,changePopover,updateResources,deleteResourc
       <BrowserRouter>
         <Route  component={Menu}/>
       </BrowserRouter>
+      {agents.length>0 &&
       <Content
         updateResources={updateResources}
         newAgents={newAgents}
         agents={agents}
         changePopover={changePopover}
         deleteResource={deleteResource}
-      />
+      />}
       <Footer/>
 
     </div>

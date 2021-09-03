@@ -3,6 +3,7 @@ import 'react-dom'
 import '../Menu/style/index.scss'
 
 import {ALL, BUILDING, IDLE, PHYSICAL, VIRTUAL} from "../../shared/constants";
+import {checkBuildingNumbers, checkTypeNumbers} from "../../shared/functions";
 
 
 export interface AgentType {
@@ -29,7 +30,7 @@ const Numbers=({agents}:NumbersProp)=>{
                 <div className="number-card">
                     Building
                     <i className='icofont-gear-alt'></i>
-                    <span className="number-card-number"></span>
+                    <span className="number-card-number">{checkBuildingNumbers(agents,BUILDING)}</span>
                 </div>
 
             </li>
@@ -37,7 +38,7 @@ const Numbers=({agents}:NumbersProp)=>{
                 <div className="number-card">
                     Idle
                     <i className='icofont-coffee-cup'></i>
-                    <span className="number-card-number"></span>
+                    <span className="number-card-number">{checkBuildingNumbers(agents,IDLE)}</span>
                 </div>
             </li>
             <li className="flex-item">
@@ -45,16 +46,16 @@ const Numbers=({agents}:NumbersProp)=>{
                     <div className="item">
                         <div className="item-components">
                             <div>ALL</div>
-                            <div className="item-number"></div>
+                            <div className="item-number">{checkTypeNumbers(agents,ALL)}</div>
                         </div>
 
                         <div className="item-components">
                             <div>PHYSICAL</div>
-                            <div className="item-number"></div>
+                            <div className="item-number">{checkTypeNumbers(agents,PHYSICAL)}</div>
                         </div>
                         <div className="item-components">
                             <div>VIRTUAL</div>
-                            <div className="item-number"></div>
+                            <div className="item-number">{checkTypeNumbers(agents,VIRTUAL)}</div>
                         </div>
 
                     </div>
