@@ -1,0 +1,331 @@
+.content {
+  margin: 79px 18% auto;
+  padding: 0 0 40px 46px;
+  width: 950px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.tw_popover {
+  display: none;
+  z-index: 999;
+  width: 570px;
+  position: absolute;
+  background-color: #FFF;
+  border: solid 1px #00b4cf;
+  padding: 15px;
+  box-sizing: border-box;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+.tw_popover .popover_content {
+  position: relative;
+}
+.tw_popover .popover_content .close_btn {
+  position: absolute;
+  right: 0;
+  color: #00b4cf;
+  top: -25px;
+  font-size: 16px;
+}
+.tw_popover .popover_content .close_btn:hover {
+  text-decoration: none;
+}
+.tw_popover .popover_content .triangle {
+  display: block;
+  width: 0;
+  height: 0;
+  border-width: 10px 6px;
+  border-style: solid;
+  border-color: transparent transparent #00b4cf transparent;
+  position: absolute;
+  top: -49px;
+  left: 10px;
+}
+.tw_popover .popover_content .triangle::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-width: 10px 6px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+  position: absolute;
+  top: -8px;
+  left: -6px;
+}
+.tw_popover p {
+  line-height: 32px;
+  color: #666;
+}
+.tw_popover input {
+  width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
+  height: 32px;
+  border: #666 solid 1px;
+  border-radius: 3px;
+  color: #00b4cf;
+}
+.tw_popover .btns {
+  padding-top: 20px;
+}
+.tw_popover .btns button {
+  display: inline-block;
+  height: 28px;
+  border: none;
+  color: #FFF;
+  cursor: pointer;
+  text-align: center;
+  margin-right: 10px;
+}
+.tw_popover .btns button.add {
+  width: 132px;
+  background-color: #00b4cf;
+}
+.tw_popover .btns button.cancel {
+  width: 118px;
+  background-color: #435466;
+}
+.tw_popover .btns button.cancel:hover {
+  background-color: #2d4054;
+}
+
+.agent-page {
+  top: 40px;
+}
+
+.numbers {
+  display: flex;
+  list-style: none;
+  width: 100%;
+  color: white;
+  padding: 0;
+  margin-right: 30px;
+}
+.numbers .flex-item {
+  flex: 1;
+  margin-right: 30px;
+  height: 98px;
+  padding: 20px;
+  background-color: #7FBC39;
+}
+.numbers .flex-item:first-child {
+  background-color: #FF9A2A;
+}
+.numbers .flex-item:last-child {
+  margin-right: 0;
+  background-color: white;
+}
+.numbers .flex-item .grate_num {
+  height: 100%;
+  color: black;
+}
+.numbers .flex-item .grate_num .item {
+  height: 100%;
+  display: flex;
+  font-size: 12px;
+  text-align: center;
+  padding: 10px;
+}
+.numbers .flex-item .grate_num .item .item-number {
+  font-size: 20px;
+  line-height: 68px;
+}
+.numbers .flex-item .grate_num .item .item-components {
+  padding: 15px;
+}
+
+.fliter {
+  height: 53px;
+  margin-top: 15px;
+  background-color: #FFF;
+}
+.fliter .btns {
+  float: left;
+}
+.fliter .btns button {
+  background: white;
+  float: left;
+  border: none;
+  border-bottom: 3px solid #FFF;
+  line-height: 50px;
+  padding: 0 30px;
+  border-right: #efefef solid 1px;
+  font-size: 14px;
+}
+.fliter .btns button.active {
+  border-bottom: 3px solid #00b4cf;
+}
+.fliter .search {
+  float: left;
+  position: relative;
+  width: 120px;
+  height: 30px;
+  background-color: #f3f3f3;
+  border-top: #e1e4e6 solid 1px;
+  border-left: #e1e4e6 solid 1px;
+  margin: 10px 30px;
+  padding: 0 10px 0 40px;
+}
+.fliter .search i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 30px;
+  width: 40px;
+  text-align: center;
+  font-size: 18px;
+  color: #999;
+}
+.fliter .search input {
+  background: none;
+  border: none;
+  width: 100%;
+  height: 30px;
+}
+.fliter .list_types {
+  float: right;
+  padding-right: 30px;
+}
+.fliter .list_types i {
+  display: inline-block;
+  padding-left: 20px;
+  font-size: 20px;
+  color: #999;
+  line-height: 53px;
+}
+.fliter .list_types i.active {
+  color: #00b4cf;
+}
+
+.list {
+  padding-top: 15px;
+}
+
+.number-card {
+  height: 116px;
+  position: relative;
+  overflow: hidden;
+  font: 18px bold;
+}
+.number-card .number-card-number {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 48px;
+}
+.number-card i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 144px;
+  color: #FFF;
+  opacity: 0.2;
+  text-align: center;
+}
+.number-card em {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  color: #FFF;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 48px;
+}
+.number-card strong {
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  font-size: 48px;
+  font-weight: 100;
+  line-height: 96px;
+  color: #FFF;
+}
+
+.list-item {
+  margin-top: 15px;
+  height: 125px;
+  padding: 14px 30px 14px 110px;
+  margin-bottom: 15px;
+  background-color: #FFF;
+  position: relative;
+}
+.list-item .logo {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 41px;
+  left: 15px;
+}
+.list-item .info h5 {
+  font-size: 14px;
+  line-height: 24px;
+}
+.list-item .info h5 i, .list-item .info h5 strong, .list-item .info h5 em, .list-item .info h5 span {
+  display: inline-block;
+  vertical-align: middle;
+}
+.list-item .info h5 i {
+  color: #999;
+  font-size: 16px;
+}
+.list-item .info h5 strong {
+  color: #01869A;
+}
+.list-item .info h5 em {
+  height: 18px;
+  padding: 0 10px;
+  margin: 0 20px;
+  line-height: 18px;
+}
+.list-item .info .each-list-footer {
+  padding-top: 25px;
+}
+.list-item .info .each-list-footer button {
+  height: 30px;
+  background: #00b4af;
+  border: none;
+  color: #FFF;
+  font-size: 14px;
+  line-height: 28px;
+  float: left;
+  padding: 0 8px;
+}
+.list-item .info .each-list-footer button:hover {
+  background-color: #01869a;
+}
+.list-item .info .each-list-footer button.deny {
+  font-size: 14px;
+  float: right;
+}
+.list-item .info .each-list-footer button .icon-plus {
+  font-size: 18px;
+}
+.list-item .info .each-list-footer em.tag {
+  float: left;
+  height: 25px;
+  line-height: 25px;
+  background-color: #f3f3f3;
+  margin-left: 10px;
+  padding: 0 10px;
+}
+.list-item .info .each-list-footer em.tag i {
+  font-size: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  height: 25px;
+  line-height: 25px;
+}
+.list-item .info .each-list-footer em.tag:hover {
+  background-color: #e1e4e6;
+  cursor: pointer;
+}
+
+@media (max-width: 870px) {
+  .content {
+    width: 641px;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

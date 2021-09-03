@@ -8,6 +8,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Menu from "./components/Menu/Menu";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
+import Content from "./components/Content/Content";
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
       <BrowserRouter>
         <Route  component={Menu}/>
       </BrowserRouter>
-      {/*<Menu/>*/}
+      <Content/>
       <Footer/>
 
     </div>
