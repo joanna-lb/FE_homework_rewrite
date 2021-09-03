@@ -4,53 +4,42 @@ import './style/index.scss'
 import {useState} from "react";
 import Numbers from "./Numbers";
 import Filter from "./Filter";
+import List from "./list/List";
+import {NewAgentType} from "../../type";
+import {ALL} from "../../shared/constants";
 
 
 
 
 
+export interface AgentType{
+  name:string,
+  os:string,
+  status:string,
+  type:string,
+  ip:string,
+  location:string,
+  resources:Array<string>,
+  id:number,
+  iconSrc?:string,
+}
 
-const Content=()=>{
-     // const[filterType,setFilterType]=useState(ALL)
+interface ContentProp {
+  agents:Array<AgentType>
+  newAgents:Array<NewAgentType>
+  changePopover:(id:number,status:boolean)=>void
+  updateResources:(id:number, resources:Array<string>)=>void
+  deleteResource:(id: number, resourceName: string)=>void
+}
 
-    // const handleChangeShowContent=(filterType:string)=>{
-    //    setFilterType(filterType)
-    // }
+const Content=({agents,newAgents,changePopover,updateResources,deleteResource}:ContentProp)=>{
+     const[filterType,setFilterType]=useState(ALL)
 
-    const agents=[{
-          "name": "bjstdmngbdr08.thoughtworks.com",
-          "os": "windows",
-          "status": "building",
-          "type": "Virtual",
-          "ip": "192.168.1.80",
-          "location": "/var/lib/cruise-agent",
-          "resources": [
-            "firefox",
-            "Ubuntu",
-            "safari",
-            "firefox",
-            "chrome",
-            "firefox"
-          ],
-          "id": 1,
-          "iconSrc": "/img/windows.8d3fce5d.png",
-          "sdfd": ""
-        },
-        {
-          "name": "bjstdmngbdr08.thoughtworks.com",
-          "os": "windows",
-          "status": "building",
-          "type": "Virtual",
-          "ip": "192.168.1.80",
-          "location": "/var/lib/cruise-agent",
-          "resources": [
-            "Firefox",
-            "Safari",
-            "Ubuntu",
-            "Chrome"
-          ],
-          "id": 2
-        }]
+    const handleChangeShowContent=(filterType:string)=>{
+       setFilterType(filterType)
+    }
+
+
     return(
         <>
             <section className="content">
@@ -59,6 +48,14 @@ const Content=()=>{
                         agents={agents}
                     />
                   <Filter
+                  />
+                  <List
+                    updateResources={updateResources}
+                    newAgents={newAgents}
+                    filterType={filterType}
+                    agents={agents}
+                    changePopover={changePopover}
+                    deleteResource={deleteResource}
                   />
                 </div>
             </section>
