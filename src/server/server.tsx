@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-export const BASE_URL = 'http://localhost:3003/agents'
+export const BASE_URL = ' http://localhost:3001/agents'
 
 
 const fetchAgents = () =>

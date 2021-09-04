@@ -40,8 +40,9 @@ export const checkIfResourcesChange = (currentResources: Array<string>, originRe
     }
 return null;
 }
-export const checkIfResourcesLengthChange=(currentResources:Array<string>)=>{
-    return currentResources.length
+export const checkIfResourcesLengthChange=(resources:Array<string>)=>{
+
+   return resources.length
 }
 
 

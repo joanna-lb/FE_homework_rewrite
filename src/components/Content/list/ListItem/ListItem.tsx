@@ -12,10 +12,12 @@ interface ListItemProps {
     agent: NewAgentType
     updateResources: (id:number, resources:Array<string>) => void
     deleteResource: (id: number, resourceName: string) => void
+  checkIfResourceChange:(resourceChange:boolean)=>void
+  ifResourceChange:boolean
 }
 
 const ListItem = ({handleChangePopover, agent, updateResources,
-                 deleteResource
+                 deleteResource,  checkIfResourceChange,ifResourceChange
                   }: ListItemProps) => {
 
 
@@ -27,6 +29,8 @@ const ListItem = ({handleChangePopover, agent, updateResources,
             <div className="info">
                 <InfoHeader agent={agent}/>
                 <Tag
+                  ifResourceChange={ifResourceChange}
+                  checkIfResourceChange={checkIfResourceChange}
                     status={agent.status}
                     deleteResource={deleteResource}
                     handleChangePopover={handleChangePopover}
@@ -35,6 +39,8 @@ const ListItem = ({handleChangePopover, agent, updateResources,
                 />
 
                 {agent.showPopover && <Popover
+                  ifResourceChange={ifResourceChange}
+                  checkIfResourceChange={checkIfResourceChange}
                     addResources={updateResources}
                     IfPopoverWindowOpen={handleChangePopover}
                     agentShow={agent}

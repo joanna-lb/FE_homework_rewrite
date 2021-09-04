@@ -14,6 +14,8 @@ import {fetchAgents} from "./server/server";
 import {bindActionCreators, Dispatch} from "redux";
 import {connect} from "react-redux";
 import * as Actions from './redux/action'
+import {checkIfResourcesLengthChange} from "./shared/functions";
+import {Istate} from "./redux/reducer";
 
 interface DispatchProps {
   newAgents:Array<NewAgentType>
@@ -26,9 +28,10 @@ interface DispatchProps {
 function App({newAgents,setNewAgents,changePopover,updateResources,deleteResource}:DispatchProps) {
   const initialAgents:Array<AgentType>=[]
   const[agents,setAgents]=useState(initialAgents)
+  const[ifResourceChange,setIfResourceChange]=useState(false)
+
   // @ts-ignore
   useEffect(async ()=>{
-
     await fetchAgents().then(
       res=> {
         if (res.data) {
@@ -37,14 +40,16 @@ function App({newAgents,setNewAgents,changePopover,updateResources,deleteResourc
         }
       }
     )
+  },[ifResourceChange])
 
+  const checkIfResourceChange=(ifChange:boolean)=>{
+    setIfResourceChange(ifChange)
+  }
 
-  },[])
 
 
   return (
     <div>
-
       <Header/>
       <BrowserRouter>
         <Route  component={Menu}/>
@@ -56,6 +61,8 @@ function App({newAgents,setNewAgents,changePopover,updateResources,deleteResourc
         agents={agents}
         changePopover={changePopover}
         deleteResource={deleteResource}
+        checkIfResourceChange={checkIfResourceChange}
+        ifResourceChange={ifResourceChange}
       />}
       <Footer/>
 
@@ -64,8 +71,8 @@ function App({newAgents,setNewAgents,changePopover,updateResources,deleteResourc
 
 }
 
-const mapStateToProps = (state: Array<NewAgentType>) => ({
-  newAgents: state
+const mapStateToProps = (state:Istate) => ({
+  newAgents: state.agents
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>

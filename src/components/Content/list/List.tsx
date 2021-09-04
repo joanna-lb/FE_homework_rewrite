@@ -25,9 +25,12 @@ interface ListProps {
     changePopover: (id: number, status: boolean) => void
     updateResources: (id: number, resources: Array<string>) => void
     deleteResource: (id: number, resourceName: string) => void
+  checkIfResourceChange:(resourceChange:boolean)=>void
+  ifResourceChange:boolean
 }
 
-const List = ({
+const List = ({checkIfResourceChange,
+                ifResourceChange,
                   filterType,
                   newAgents,
                   changePopover,
@@ -47,6 +50,8 @@ const List = ({
                 newAgents.map(agent =>
                     filterType === ALL &&
                     <ListItem
+                      ifResourceChange={ifResourceChange}
+                      checkIfResourceChange={checkIfResourceChange}
                         deleteResource={deleteResource}
                         updateResources={updateResources}
                         handleChangePopover={handleChangePopover}
@@ -56,6 +61,8 @@ const List = ({
                     filterType === PHYSICAL &&
                     agent.type === PHYSICAL &&
                     <ListItem
+                      ifResourceChange={ifResourceChange}
+                      checkIfResourceChange={checkIfResourceChange}
                         deleteResource={deleteResource}
                         updateResources={updateResources}
                         handleChangePopover={handleChangePopover}
@@ -65,6 +72,8 @@ const List = ({
                     filterType === VIRTUAL &&
                     agent.type === VIRTUAL &&
                     <ListItem
+                      ifResourceChange={ifResourceChange}
+                      checkIfResourceChange={checkIfResourceChange}
                         deleteResource={deleteResource}
                         updateResources={updateResources}
                         handleChangePopover={handleChangePopover}

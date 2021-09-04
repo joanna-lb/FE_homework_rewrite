@@ -30,9 +30,11 @@ interface ContentProp {
   changePopover:(id:number,status:boolean)=>void
   updateResources:(id:number, resources:Array<string>)=>void
   deleteResource:(id: number, resourceName: string)=>void
+  checkIfResourceChange:(resourceChange:boolean)=>void
+  ifResourceChange:boolean
 }
 
-const Content=({agents,newAgents,changePopover,updateResources,deleteResource}:ContentProp)=>{
+const Content=({ifResourceChange,agents,newAgents,changePopover,updateResources,deleteResource, checkIfResourceChange}:ContentProp)=>{
      const[filterType,setFilterType]=useState(ALL)
 
     const handleChangeShowContent=(filterType:string)=>{
@@ -50,6 +52,8 @@ const Content=({agents,newAgents,changePopover,updateResources,deleteResource}:C
                   <Filter
                   />
                   <List
+                    ifResourceChange={ifResourceChange}
+                    checkIfResourceChange={checkIfResourceChange}
                     updateResources={updateResources}
                     newAgents={newAgents}
                     filterType={filterType}
