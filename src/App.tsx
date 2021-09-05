@@ -31,15 +31,20 @@ function App({newAgents,setNewAgents,changePopover,updateResources,deleteResourc
   const[ifResourceChange,setIfResourceChange]=useState(false)
 
   // @ts-ignore
-  useEffect(async ()=>{
-    await fetchAgents().then(
-      res=> {
-        if (res.data) {
-          setAgents(res.data)
-          setNewAgents(res.data)
+  useEffect(()=>{
+    try{
+      fetchAgents().then(
+        res=> {
+          if (res.data) {
+            setAgents(res.data)
+            setNewAgents(res.data)
+          }
         }
-      }
-    )
+      )
+    }catch (e) {
+      throw  e
+    }
+
   },[ifResourceChange])
 
   const checkIfResourceChange=(ifChange:boolean)=>{

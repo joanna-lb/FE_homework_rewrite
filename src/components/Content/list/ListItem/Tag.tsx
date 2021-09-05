@@ -17,8 +17,6 @@ interface TagProps {
 }
 
 const Tag = ({ ifResourceChange,handleChangePopover, resources, id,status,deleteResource,checkIfResourceChange}: TagProps) => {
-
-
     const handleDeleteTag =async (id: number, resource: string) => {
       await updateResourceAction(id,resources.filter(originResource=>originResource!==resource))
        deleteResource(id,resource)
