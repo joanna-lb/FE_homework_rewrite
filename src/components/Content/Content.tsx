@@ -50,6 +50,8 @@ const Content=({ifResourceChange,agents,newAgents,changePopover,updateResources,
                         agents={agents}
                     />
                   <Filter
+                    handleChangeShowContent={handleChangeShowContent}
+                    filterType={filterType}
                   />
                   <List
                     ifResourceChange={ifResourceChange}
