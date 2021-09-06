@@ -4,7 +4,7 @@ import './style/index.scss'
 import {useState} from "react";
 import {ALL, PHYSICAL,VIRTUAL} from "../../shared/constants";
 
-interface FilterProp {
+export interface FilterProp {
   handleChangeShowContent:(filterType:string)=>void
   filterType:string
 }
