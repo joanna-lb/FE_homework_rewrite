@@ -1,60 +1,66 @@
-import React, {Props} from "react";
-import {screen, render} from '@testing-library/react';
+import React from "react";
+import {screen} from '@testing-library/react';
 import '@testing-library/jest-dom'
 import Filter, {FilterProp} from '../src/components/Content/Filter'
 import ListItem, {ListItemProps} from "../src/components/Content/list/ListItem/ListItem";
 import {NewAgentType} from "../src/type";
 import userEvent from "@testing-library/user-event";
+import App from "../src/App";
+import {render} from './test.utils'
+import '@babel/core/lib/gensync-utils/async'
 
-
-function renderListItem(props: Partial<ListItemProps> = {}) {
-  const defaultProps: ListItemProps = {
-    handleChangePopover() {
-      return;
-    },
-    updateResources() {
-      return;
-    },
-    deleteResource() {
-      return;
-    },
-    checkIfResourceChange() {
-      return;
-    },
-    ifResourceChange: false,
-    agent:
-      {
-        "name": "bjstdmngbdr08.thoughtworks.com",
-        "os": "windows",
-        "status": "building",
-        "type": "Virtual",
-        "ip": "192.168.1.80",
-        "location": "/var/lib/cruise-agent",
-        "resources": [
-          "firefox",
-          "safari",
-          "firefox",
-          "chrome",
-          "firefox",
-          "1231324234",
-          "2312",
-          "sdfsdf"
-        ],
-        "id": 1,
-        "iconSrc": "/img/windows.8d3fce5d.png",
-        "showPopover": false
-      }
-
-  };
-  return render(<ListItem{...defaultProps} {...props} />);
+const virtualAgent={
+  "name": "bjstdmngbdr08.thoughtworks.com",
+  "os": "windows",
+  "status": "building",
+  "type": "Virtual",
+  "ip": "192.168.1.80",
+  "location": "/var/lib/cruise-agent",
+  "resources": [
+    "firefox",
+    "safari",
+    "firefox",
+    "chrome",
+    "firefox",
+    "1231324234",
+    "2312",
+    "sdfsdf"
+  ],
+  "id": 1,
+  "iconSrc": "/img/windows.8d3fce5d.png",
+  "showPopover": false
 }
+
+const showPopoverAgent={
+  "name": "bjstdmngbdr08.thoughtworks.com",
+  "os": "windows",
+  "status": "building",
+  "type": "Physical",
+  "ip": "192.168.1.80",
+  "location": "/var/lib/cruise-agent",
+  "resources": [
+    "firefox",
+    "safari",
+    "firefox",
+    "chrome",
+    "firefox",
+    "1231324234",
+    "2312",
+    "sdfsdf"
+  ],
+  "id": 1,
+  "iconSrc": "/img/windows.8d3fce5d.png",
+  "showPopover": true
+}
+
+
 
 function renderFilter(props: Partial<FilterProp> = {}) {
   const defaultFilterProps: FilterProp = {
     handleChangeShowContent() {
       return;
     },
-    filterType: 'All'
+    filterType: 'Virtual'
   };
 
   return render(<Filter{...defaultFilterProps} {...props} />)
@@ -69,10 +75,56 @@ describe('Filter component', () => {
     expect(screen.getByText(/All/i)).toBeInTheDocument()
   })
 
-  test('when click virtual should show certain list item', () => {
-    renderFilter()
-    userEvent.click(screen.getByText(/Virtual/i))
-    renderListItem();
-    // expect(screen.getAllByRole('listitem').length).toBe()
+
+})
+
+describe('List component', ()=>{
+  test('should render list item',async ()=>{
+    function renderListItem(props: Partial<ListItemProps> = {}) {
+      const defaultProps: ListItemProps = {
+        handleChangePopover() {
+          return;
+        },
+        updateResources() {
+          return;
+        },
+        deleteResource() {
+          return;
+        },
+        checkIfResourceChange() {
+          return;
+        },
+        ifResourceChange: false,
+        agent:virtualAgent
+      };
+      return render(<ListItem{...defaultProps} {...props} />);
+    }
+    renderListItem()
+    expect(await screen.getByText(/1231324234/i)).toBeInTheDocument()
   })
+
+  test('should show popover when it is true',async ()=>{
+    function renderListItem(props: Partial<ListItemProps> = {}) {
+      const defaultProps: ListItemProps = {
+        handleChangePopover() {
+          return;
+        },
+        updateResources() {
+          return;
+        },
+        deleteResource() {
+          return;
+        },
+        checkIfResourceChange() {
+          return;
+        },
+        ifResourceChange: false,
+        agent:showPopoverAgent
+      };
+      return render(<ListItem{...defaultProps} {...props} />);
+    }
+    renderListItem()
+    expect(await screen.getByText(/Add Resources/i)).toBeInTheDocument()
+  })
+
 })
