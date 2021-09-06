@@ -11,7 +11,7 @@ const Header = () => {
   }
   return (
       <>
-        <header className="header-bar">
+        <header className="header-bar" data-testid='header-bar'>
 
           <div className="mid">
             <div className="logo">
@@ -38,7 +38,6 @@ const Header = () => {
         </div>
 
       </header>
-      <div className='test'>123</div>
     </>
   )
 }

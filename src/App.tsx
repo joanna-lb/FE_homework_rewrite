@@ -9,7 +9,7 @@ import Footer from "./components/Footer/Footer";
 import Menu from "./components/Menu/Menu";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Content, {AgentType} from "./components/Content/Content";
-import {changePopover, deleteResource, setNewAgents} from "./redux/action";
+
 import {fetchAgents} from "./server/server";
 import {bindActionCreators, Dispatch} from "redux";
 import {connect} from "react-redux";

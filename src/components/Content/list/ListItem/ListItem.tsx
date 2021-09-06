@@ -7,7 +7,8 @@ import Popover from "./Popover";
 import {checkLogoImage} from "../../../../shared/functions";
 import InfoHeader from "./InfoHeader";
 
-interface ListItemProps {
+
+export interface ListItemProps {
     handleChangePopover: (id: number, status: boolean) => void
     agent: NewAgentType
     updateResources: (id:number, resources:Array<string>) => void
