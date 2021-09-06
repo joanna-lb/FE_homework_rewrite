@@ -127,4 +127,53 @@ describe('List component', ()=>{
     expect(await screen.getByText(/Add Resources/i)).toBeInTheDocument()
   })
 
+  test('info header with ip status',async ()=>{
+    function renderListItem(props: Partial<ListItemProps> = {}) {
+      const defaultProps: ListItemProps = {
+        handleChangePopover() {
+          return;
+        },
+        updateResources() {
+          return;
+        },
+        deleteResource() {
+          return;
+        },
+        checkIfResourceChange() {
+          return;
+        },
+        ifResourceChange: false,
+        agent:virtualAgent
+      };
+      return render(<ListItem{...defaultProps} {...props} />);
+    }
+    renderListItem()
+    expect(await screen.getByText(/192.168.1.80/i)).toBeInTheDocument()
+    expect(await screen.getByText(/building/i)).toBeInTheDocument()
+  })
+
+  test('info tag with deny button',async ()=>{
+    function renderListItem(props: Partial<ListItemProps> = {}) {
+      const defaultProps: ListItemProps = {
+        handleChangePopover() {
+          return;
+        },
+        updateResources() {
+          return;
+        },
+        deleteResource() {
+          return;
+        },
+        checkIfResourceChange() {
+          return;
+        },
+        ifResourceChange: false,
+        agent:virtualAgent
+      };
+      return render(<ListItem{...defaultProps} {...props} />);
+    }
+    renderListItem()
+    expect(await screen.getByText(/deny/i)).toBeInTheDocument()
+  })
+
 })
