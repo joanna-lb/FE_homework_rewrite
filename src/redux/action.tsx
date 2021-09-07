@@ -1,4 +1,4 @@
-import {AgentType} from "../components/Content/Content";
+import {AgentType} from "../components/Content/list/List";
 import {CHANGE_POPOVER, DELETE_RESOURCE, SET_NEW_AGENTS, UPDATE_RESOURCES} from "../shared/constants";
 
 const setNewAgents=(agents:Array<AgentType>)=>{

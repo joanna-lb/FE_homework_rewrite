@@ -7,22 +7,11 @@ import Filter from "./Filter";
 import List from "./list/List";
 import {NewAgentType} from "../../type";
 import {ALL} from "../../shared/constants";
+import {AgentType} from "./list/List";
 
 
 
 
-
-export interface AgentType{
-  name:string,
-  os:string,
-  status:string,
-  type:string,
-  ip:string,
-  location:string,
-  resources:Array<string>,
-  id:number,
-  iconSrc?:string,
-}
 
 interface ContentProp {
   agents:Array<AgentType>

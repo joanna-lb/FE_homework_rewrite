@@ -1,5 +1,5 @@
 import {NewAgentType} from "../type";
-import {AgentType} from "../components/Content/Content";
+import {AgentType} from "../components/Content/list/List";
 import {ALL} from "./constants";
 
 export const checkLogoImage=(agent:NewAgentType)=>{

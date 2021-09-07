@@ -1,24 +1,13 @@
 import * as React from "react";
 import 'react-dom'
 import '../Menu/style/index.scss'
-
+import {AgentType} from "./list/List";
 import {ALL, BUILDING, IDLE, PHYSICAL, VIRTUAL} from "../../shared/constants";
 import {checkBuildingNumbers, checkTypeNumbers} from "../../shared/functions";
 
 
-export interface AgentType {
-  name: string,
-  os: string,
-  status: string,
-  type: string,
-  ip: string,
-  location: string,
-  resources: Array<string>,
-  id: number,
-  iconSrc?: string,
-}
 
-interface NumbersProp {
+export interface NumbersProp {
     agents:Array<AgentType>
 }
 
@@ -51,7 +40,7 @@ const Numbers=({agents}:NumbersProp)=>{
 
                         <div className="item-components">
                             <div>PHYSICAL</div>
-                            <div className="item-number">{checkTypeNumbers(agents,PHYSICAL)}</div>
+                            <div className="item-number" data-testid='physical-number'>{checkTypeNumbers(agents,PHYSICAL)}</div>
                         </div>
                         <div className="item-components">
                             <div>VIRTUAL</div>
