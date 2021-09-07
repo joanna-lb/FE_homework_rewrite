@@ -1,36 +1,27 @@
-const path = require("path");
-
 module.exports = {
-  root: true,
-  parser: "@typescript-eslint/parser",
-  env: {
-    es6: true,
-    browser: true,
-    node: true,
-    jest: true,
-  },
-  extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:prettier/recommended'
-  ],
-  rules: {
-    'react/prop-types': 'off'
-  },
-  parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: "module"
-  },
-  ignorePatterns: ['node_modules/'],
-  plugins: [
-    "@typescript-eslint",
-    'react'
-  ],
-  settings: {
-    "import/resolver":{
-      "webpack":{
-        "config":"webpack.config.js"
-      }
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends":[
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+      "react/jsx-uses-react": "error",
+      "react/jsx-uses-vars": "error",
+
     }
-  }
-}
+};

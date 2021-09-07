@@ -10,51 +10,56 @@ import {ALL} from "../../shared/constants";
 import {AgentType} from "./list/List";
 
 
-
-
-
 interface ContentProp {
-  agents:Array<AgentType>
-  newAgents:Array<NewAgentType>
-  changePopover:(id:number,status:boolean)=>void
-  updateResources:(id:number, resources:Array<string>)=>void
-  deleteResource:(id: number, resourceName: string)=>void
-  checkIfResourceChange:(resourceChange:boolean)=>void
-  ifResourceChange:boolean
+  agents: Array<AgentType>
+  newAgents: Array<NewAgentType>
+  changePopover: (id: number, status: boolean) => void
+  updateResources: (id: number, resources: Array<string>) => void
+  deleteResource: (id: number, resourceName: string) => void
+  checkIfResourceChange: (resourceChange: boolean) => void
+  ifResourceChange: boolean
 }
 
-const Content=({ifResourceChange,agents,newAgents,changePopover,updateResources,deleteResource, checkIfResourceChange}:ContentProp)=>{
-     const[filterType,setFilterType]=useState(ALL)
+const Content = ({
+                   ifResourceChange,
+                   agents,
+                   newAgents,
+                   changePopover,
+                   updateResources,
+                   deleteResource,
+                   checkIfResourceChange
+                 }: ContentProp) => {
+  const [filterType, setFilterType] = useState(ALL)
 
-    const handleChangeShowContent=(filterType:string)=>{
-       setFilterType(filterType)
-    }
+  const handleChangeShowContent = (filterType: string) => {
+    setFilterType(filterType)
+  }
 
 
-    return(
-        <>
-            <section className="content">
-                <div className="agent-page">
-                    <Numbers
-                        agents={agents}
-                    />
-                  <Filter
-                    handleChangeShowContent={handleChangeShowContent}
-                    filterType={filterType}
-                  />
-                  <List
-                    ifResourceChange={ifResourceChange}
-                    checkIfResourceChange={checkIfResourceChange}
-                    updateResources={updateResources}
-                    newAgents={newAgents}
-                    filterType={filterType}
-                    agents={agents}
-                    changePopover={changePopover}
-                    deleteResource={deleteResource}
-                  />
-                </div>
-            </section>
-        </>
-)
+  return (
+    <>
+      <section className="content">
+        <div className="agent-page">
+          <Numbers
+            agents={agents}
+          />
+          <Filter
+            handleChangeShowContent={handleChangeShowContent}
+            filterType={filterType}
+          />
+          <List
+            ifResourceChange={ifResourceChange}
+            checkIfResourceChange={checkIfResourceChange}
+            updateResources={updateResources}
+            newAgents={newAgents}
+            filterType={filterType}
+            agents={agents}
+            changePopover={changePopover}
+            deleteResource={deleteResource}
+          />
+        </div>
+      </section>
+    </>
+  )
 }
 export default Content
