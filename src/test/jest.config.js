@@ -7,7 +7,7 @@ module.exports = {
     "^.+\\.tsx?$": "ts-jest",
     "^.+\\.js$": "babel-jest",
     "^.+\\.css$": "identity-obj-proxy",
-    "^.+\\.scss$":"identity-obj-proxy"
+    "^.+\\.scss$": "identity-obj-proxy"
   },
   transformIgnorePatterns: ["<rootDir>/node_modules/"],
   setupFilesAfterEnv: [

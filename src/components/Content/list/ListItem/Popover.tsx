@@ -10,17 +10,24 @@ interface PopoverProps {
   agentShow: NewAgentType
   addResources: (id: number, resources: Array<string>) => void
   id: number
-  checkIfResourceChange:(resourceChange:boolean)=>void
-  ifResourceChange:boolean
+  checkIfResourceChange: (resourceChange: boolean) => void
+  ifResourceChange: boolean
 }
 
-const Popover = ({IfPopoverWindowOpen, agentShow, addResources, id, checkIfResourceChange, ifResourceChange}: PopoverProps) => {
+const Popover = ({
+                   IfPopoverWindowOpen,
+                   agentShow,
+                   addResources,
+                   id,
+                   checkIfResourceChange,
+                   ifResourceChange
+                 }: PopoverProps) => {
   const [newResources, setNewResources] = useState('')
   const [popoverInput, setPopoverInput] = useState('')
 
   const inputRef = React.createRef<HTMLDivElement>();
   useEffect(() => {
-     document.addEventListener('click', handleClickOutsidePopover)
+    document.addEventListener('click', handleClickOutsidePopover)
     return () => {
       document.removeEventListener('click', handleClickOutsidePopover)
     }

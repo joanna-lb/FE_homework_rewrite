@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {BASE_URL, fetchAgents, updateResourceAction} from '../src/server/server'
+import {BASE_URL, fetchAgents, updateResourceAction} from '../server/server'
 
 
 jest.mock('axios')

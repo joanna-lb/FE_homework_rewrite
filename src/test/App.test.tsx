@@ -1,7 +1,7 @@
 import React from "react";
 import {screen, cleanup} from "@testing-library/react";
 import '@testing-library/jest-dom'
-import App from "../src/App";
+import App from "../App";
 import '@testing-library/jest-dom/extend-expect'
 // @ts-ignore
 import {render} from './test.utils'

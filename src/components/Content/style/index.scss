@@ -274,18 +274,17 @@
   }
 
 
-
   i:hover {
     animation: rotate 2s linear infinite;
     @keyframes rotate {
       0% {
         left: 25%;
-        top:0;
+        top: 0;
         transform: rotate(0deg);
       }
       100% {
         left: 25%;
-        top:0;
+        top: 0;
         transform: rotate(360deg);
       }
     }
@@ -351,6 +350,7 @@
 
     .tag-footer {
       margin-top: 40px;
+
       button {
         height: 30px;
         background: #00b4af;
@@ -384,6 +384,7 @@
         margin-left: 10px;
         padding: 0 10px;
         margin-bottom: 10px;
+
         i {
           font-size: 18px;
           display: inline-block;

@@ -1,6 +1,6 @@
-*{
-  box-sizing:content-box;
-  -moz-box-sizing:inherit;
+* {
+  box-sizing: content-box;
+  -moz-box-sizing: inherit;
 }
 
 html {
@@ -25,24 +25,27 @@ body {
   margin: 0 auto;
 }
 
-.clearfix:before,.clearfix:after {
-  content:"";
-  display:table;
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
 }
+
 .clearfix:after {
-  clear:both;
-  overflow:hidden;
+  clear: both;
+  overflow: hidden;
 }
+
 .clearfix {
-  zoom:1; /* for ie6 & ie7 */
+  zoom: 1; /* for ie6 & ie7 */
 }
+
 .clear {
-  clear:both;
-  display:block;
-  font-size:0;
-  height:0;
-  line-height:0;
-  overflow:hidden;
+  clear: both;
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */

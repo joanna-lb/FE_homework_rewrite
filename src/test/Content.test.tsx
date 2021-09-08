@@ -1,11 +1,11 @@
 import React from "react";
 import {screen} from '@testing-library/react';
 import '@testing-library/jest-dom'
-import Filter, {FilterProp} from '../src/components/Content/Filter'
-import ListItem, {ListItemProps} from "../src/components/Content/list/ListItem/ListItem";
+import Filter, {FilterProp} from '../components/Content/Filter'
+import ListItem, {ListItemProps} from "../components/Content/list/ListItem/ListItem";
 import {render} from './test.utils'
 import '@babel/core/lib/gensync-utils/async'
-import Numbers, {NumbersProp} from "../src/components/Content/Numbers";
+import Numbers, {NumbersProp} from "../components/Content/Numbers";
 
 const virtualAgent = {
   "name": "bjstdmngbdr08.thoughtworks.com",
@@ -73,10 +73,8 @@ const showPopoverAgent = {
 }
 
 
-
-
-describe('Filter component',  () => {
-  test('should show filter words on the web', async() => {
+describe('Filter component', () => {
+  test('should show filter words on the web', async () => {
     function renderFilter(props: Partial<FilterProp> = {}) {
       const defaultFilterProps: FilterProp = {
         handleChangeShowContent() {
@@ -91,7 +89,7 @@ describe('Filter component',  () => {
     renderFilter()
     expect(await screen.getByText(/Virtual/i)).toBeInTheDocument()
     expect(screen.getByText(/Physical/i)).toBeInTheDocument()
-    expect( screen.getByText(/All/i)).toBeInTheDocument()
+    expect(screen.getByText(/All/i)).toBeInTheDocument()
   })
 })
 
@@ -192,20 +190,22 @@ describe('List component', () => {
       };
       return render(<ListItem{...defaultProps} {...props} />);
     }
+
     renderListItem()
     expect(await screen.getByText(/deny/i)).toBeInTheDocument()
   })
 
 })
 
-describe('test number component', ()=>{
-  test('should show numbers on the web',async ()=>{
+describe('test number component', () => {
+  test('should show numbers on the web', async () => {
     function renderNumber(props: Partial<NumbersProp> = {}) {
       const defaultProps: NumbersProp = {
         agents: [virtualAgent, physicalAgent]
       };
       return render(<Numbers{...defaultProps} {...props} />);
     }
+
     renderNumber()
     expect(await screen.getByText(/PHYSICAL/i)).toBeInTheDocument()
     expect(await screen.getByTestId('physical-number')).toHaveTextContent('1')
